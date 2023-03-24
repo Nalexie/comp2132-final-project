@@ -1,0 +1,197 @@
+
+$main_color: rgb(8, 44, 121);
+$secondary_color: rgb(26, 251, 228);
+$accent_color: rgb(255, 179, 15);
+
+/* universal palette */
+$dark_color: #242424;
+$light_color: rgb(245, 245, 245);
+$warning_color: rgb(139, 0, 0);
+$approve_color: rgb(84, 151, 53);
+
+
+@mixin box-shading($shade-color) {
+    box-shadow: 5px 5px 5px $shade-color;
+}
+
+@mixin second-dark-contrast()
+{
+    background-color: $secondary_color;
+    color: $dark_color;
+}
+
+html {
+   
+    box-sizing: border-box;
+    color: $light_color;
+    font-size: 16px;
+    line-height: 1.15;
+    padding: 5px;
+    position: relative;
+}
+
+html > * {
+    font-size: larger;    
+}
+
+body {    
+
+    background: linear-gradient(
+        $main_color,
+        $main_color, 
+        $secondary_color);
+    min-height: 100vh;
+    
+}
+
+body > * {
+        box-sizing: inherit;
+        position: relative;
+    }
+
+nav {
+    align-items: baseline;
+    border-bottom: 1px solid $secondary_color;
+    box-sizing: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        display: inline;
+        padding-left: 20px;
+    }
+
+    button {
+        color: $light_color;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    button:hover {
+        color: $accent_color;
+        background: none;
+        border: none;
+    }
+}
+
+.slide-down {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    position: absolute;
+    @include second-dark-contrast();
+}
+
+.show {
+    height: 200px;
+    visibility: visible;
+    position: relative;
+}
+
+
+main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr 1fr;
+    height: 100%;
+    padding-bottom: 5vh;
+    width: 100%;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    height: 100%;
+    margin-top: 2vh;
+    padding-bottom: 5vh;
+    width: 100%;
+}
+
+section >  * {
+        background-color: rgba($secondary_color, 0.5);
+        padding: 5px;
+    }
+
+.diceboard {
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+.popup {
+    border: 2px solid $main_color;
+    border-radius: 5px;
+    width: 15em;
+    height: 15em;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    @include box-shading($main_color);
+    @include second-dark-contrast();
+}
+
+#controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border: 1px solid $main_color;
+    border-radius: 5px;
+    cursor: pointer;
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+    margin: 10px;
+    @include second-dark-contrast();
+    
+    
+}
+
+button:hover {
+    background-color: $accent_color;
+    border: 1px solid $accent_color;
+
+    color: $dark_color;
+    @include box-shading($main_color);
+    }
+img {
+    border-radius: 15px;
+    @include box-shading($main_color);
+    height: 7em;
+    margin: 5px;
+}
+
+footer {
+    bottom: 0;
+    box-sizing: inherit;
+    clear: both;
+    color: $dark_color;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5vh;
+    padding: 20px;
+    position: absolute;
+}

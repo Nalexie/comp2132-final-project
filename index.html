@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dice Game</title>
+    <meta name="Dice Game" content="Comp Final Project">
+
+    <!--- Required meta tags --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--- icons & css--->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--- script --->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script src="scripts/finalProject.js" defer="defer"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Dice Game</h1>
+            <ul>
+                <li>
+                    <button id="howToBtn">
+                        <h3>How to play</h3>
+                    </button>
+                </li>
+                <li>
+                    <button id="rulesBtn">
+                        <h3>Rules</h3>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="slide-down" id="howTo">
+            <div>
+                <h1>
+                    How To Play
+                </h1>
+
+                <p>
+                    Each player recieves two dice for each round consisting of three rounds for the entire game.
+                </p>
+                <p>
+                    For each round, the player with the highest value of dice wins the round.
+                </p>
+                <p>
+                    At the end of the third round the the player with the most win, wins the entire game.
+                </p>
+            </div>
+        </section>
+
+        <section class="slide-down" id="rules">
+            <div>
+                <h1>
+                    Rules:
+                </h1>
+                <ul>
+                    <li>
+                        If any player's two dice produce a 1, that player receives a score of 0 for that round.
+                        For instance, if the player rolls a <strong>6</strong> and a <strong>1</strong>, they receive a
+                        score of <strong>0</strong>.
+                    </li>
+                    <li>
+                        If any player rolls a pair of the same numbers, their score is equal to the sum of the two dice
+                        multiplied by 2.
+                        For instance, if the player rolls a <strong>5</strong> and a <strong>5</strong>, their score is
+                        <strong>(5+5)*2=20</strong> .
+                    </li>
+                    <li>
+                        If the player rolls any other combination of dice than those listed above, their score will be
+                        equal to the sum of the two dice, for example, if they roll a <strong>3</strong> and a
+                        <strong>2</strong>, their score is <strong>3+2=5</strong> .
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="hands">
+            <div>
+                <h2>Your Dice</h2>
+                <div id="diceboard" class="diceboard">
+                    <div id="diceOne">
+                        <h3>Dice #1</h3>
+                        <img src="images/dice-1-face.png" alt="dice" class="dice" id="playerDiceOne">
+                    </div>
+
+                    <div id="diceTwo">
+                        <h3>Dice #2</h3>
+                        <img src="images/dice-1-face.png" alt="dice" class="dice" id="playerDiceTwo">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Opponent's Dice</h2>
+                <div id="diceboard" class="diceboard">
+                    <div id="diceOne">
+                        <h3>Dice #1</h3>
+                        <img src="images/dice-1-face.png" alt="dice" class="dice" id="compDiceOne">
+                    </div>
+
+                    <div id="diceTwo">
+                        <h3>Dice #2</h3>
+                        <img src="images/dice-1-face.png" alt="dice" class="dice" id="compDiceTwo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tallys">
+            <div>
+                <h2>Your Score</h2>
+                <div id="scoreboard" class="scoreboard">
+                    <div id="gameScore">
+                        <h3>Current Score :
+                            <span id="playerScore">
+                                0
+                            </span>
+                        </h3>
+                    </div>
+
+                    <div id="totalScore">
+                        <h3>Total Score :
+                            <span id="playerTotal">
+                                0
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Opponent's Score</h2>
+                <div id="scoreboard" class="scorboard">
+                    <div id="gameScore">
+                        <h3>Current Score :
+                            <span id="compScore">
+                                0
+                            </span>
+                        </h3>
+                    </div>
+
+                    <div id="totalScore">
+                        <h3>Total Score :
+                            <span id="compTotal">
+                                0
+                            </span>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="controls">
+            <button class="button resetGame">New Game</button>
+            <button class="button" id="rollDice">Roll Dice</button>
+
+        </section>
+
+        <section class="popup" id="winner">
+            <div>
+                <h1>
+                    You've Won!
+                </h1>
+
+                <button class="resetGame button">
+                    Play Again
+                </button>
+            </div>
+        </section>
+
+        <section class="popup" id="loser">
+            <div>
+                <h1>
+                    You Lose
+                </h1>
+
+                <button class="resetGame button">
+                    Play Again
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copycopyright2023</p>
+    </footer>
+</body>
+
+</html>
