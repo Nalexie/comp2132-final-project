@@ -89,6 +89,7 @@ function updateTotal(score, tally, JQTotal) {
 
 // who won the round
 function winnerRound(playerScore, compScore) {
+    $rollDice.prop('disabled', true);
     if (playerScore > compScore) {
         $winner.css("display", "flex");
     } else {
@@ -99,7 +100,8 @@ function winnerRound(playerScore, compScore) {
 
 // reset game when new game or play again
 function resetGame() {
-    gameround   = defaultZero;
+    $rollDice.prop('disabled', false);
+    gameround = defaultZero;
     playerDiceA = defaultZero;
     playerDiceB = defaultZero;
     compDiceA   = defaultZero;

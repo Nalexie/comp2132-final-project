@@ -89,7 +89,8 @@ section {
 }
 
 section > * {
-  background-color: rgba(26, 251, 228, 0.5);
+  background-color: rgb(26, 251, 228);
+  color: #242424;
   padding: 5px;
 }
 
@@ -106,10 +107,10 @@ section > * {
   border: 2px solid rgb(8, 44, 121);
   border-radius: 5px;
   width: 15em;
-  height: 15em;
+  height: 12em;
   padding: 10px;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
@@ -118,6 +119,18 @@ section > * {
   box-shadow: 5px 5px 5px rgb(8, 44, 121);
   background-color: rgb(26, 251, 228);
   color: #242424;
+}
+
+.popup div *{
+  display: flex;
+  justify-content: center;  
+}
+
+.popup div button{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-70%, -50%);
 }
 
 #controls {

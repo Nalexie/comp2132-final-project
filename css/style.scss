@@ -120,9 +120,9 @@ section {
 }
 
 section >  * {
-        background-color: rgba($secondary_color, 0.5);
-        padding: 5px;
-    }
+    @include second-dark-contrast();
+    padding: 5px;
+}
 
 .diceboard {
    
@@ -138,10 +138,10 @@ section >  * {
     border: 2px solid $main_color;
     border-radius: 5px;
     width: 15em;
-    height: 15em;
+    height: 12em;
     padding: 10px;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
@@ -149,6 +149,20 @@ section >  * {
     justify-content: center;
     @include box-shading($main_color);
     @include second-dark-contrast();
+
+    div{
+        *{
+           display: flex;
+            justify-content: center;  
+        }
+
+        button{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-70%, -50%);
+        }
+    }
 }
 
 #controls {
